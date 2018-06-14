@@ -14,9 +14,9 @@ sh ./build
 You need Java 8 to build the application.
 
 ### Scrape
-* sh ./scrape
-** reset_db
-** url: defaults to https://sfbay.craigslist.org/search/apa
+- sh ./scrape
+  - reset_db
+  - url: defaults to https://sfbay.craigslist.org/search/apa
 
 ie.
 ```
@@ -29,10 +29,10 @@ sh ./model_train
 ```
 
 ### Estimate
-* sh ./model_estimate
-** bedrooms
-** square_feet
-** neighborhood
+- sh ./model_estimate
+  - bedrooms
+  - square_feet
+  - neighborhood
 
 ie.
 ```
