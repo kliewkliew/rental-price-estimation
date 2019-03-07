@@ -39,6 +39,7 @@ ie.
 sh ./model_estimate -n "Downtown" -s 570 -b 1
 ```
 The neighborhood name must exactly match a neighborhood in the city that was scraped.
+To get the list of possible neighborhoods, select "san francisco" from the dropdown box at the top of the page.
 
 ## Implementation
 
