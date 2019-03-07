@@ -32,9 +32,13 @@ public class DAO {
 
         final Statement stmt = conn.createStatement();
         for (final Listing l : listings) {
-            final ResultSet rs = stmt.executeQuery("select count(1) from " + tableName + " where listing_id = " + l.id);
-            if (rs.getInt(1) > 0) continue;
-            stmt.executeUpdate("insert into " + tableName + " values " + l.sqlInsertValueString() + ";");
+            try {
+                final ResultSet rs = stmt.executeQuery("select count(1) from " + tableName + " where listing_id = " + l.id);
+                if (rs.getInt(1) > 0) continue;
+                stmt.executeUpdate("insert into " + tableName + " values " + l.sqlInsertValueString() + ";");
+            } catch (Exception e) {
+                // TODO: parameterized SQL statements to avoid exceptions by automatically escaping characters that result in invalid SQL query strings.
+            }
         }
     }
 
